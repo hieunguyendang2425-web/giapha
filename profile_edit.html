@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập Nhật Hồ Sơ Cá Nhân</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Gia phả họ Cao Đình</div>
+        <div class="search-bar">
+            <input type="text" placeholder="🔍 Tìm kiếm thành viên..." class="search-input">
+            <button class="voice-search">🎤</button>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="add_member.html">Thêm Thành Viên</a>
+            <a href="#" class="profile-link active">
+                <img src="https://placehold.co/35x35/0056b3/ffffff?text=A" alt="Avatar" class="profile-avatar">
+                Cao Đình A
+            </a>
+        </nav>
+    </header>
+
+    <main class="content-area edit-profile-form">
+        <h1>Cập Nhật Thông Tin Cá Nhân: Cao Đình A</h1>
+
+        <div class="form-grid">
+            <div class="form-section flex flex-col items-center">
+                <h2>Ảnh Đại Diện</h2>
+                <img src="https://placehold.co/150x150/3498db/ffffff?text=A" alt="Ảnh đại diện hiện tại" class="profile-avatar" style="width: 150px; height: 150px; margin: 15px 0;">
+                <input type="file" id="uploadAvatar" accept="image/*" style="margin-bottom: 20px;">
+                <button class="btn-secondary">Thay đổi ảnh đại diện</button>
+            </div>
+
+            <div class="form-section">
+                <h2>Thông tin Cá nhân</h2>
+                <form>
+                    <label for="editHoTen">Họ và Tên (*):</label>
+                    <input type="text" id="editHoTen" value="Cao Đình A" required>
+                    
+                    <label for="editNgaySinh">Ngày sinh (*):</label>
+                    <input type="date" id="editNgaySinh" value="1929-01-01" required>
+
+                    <label for="editGioiTinh">Giới tính:</label>
+                    <select id="editGioiTinh">
+                        <option value="Nam" selected>Nam</option>
+                        <option value="Nu">Nữ</option>
+                    </select>
+
+                    <label for="editDiaChi">Địa chỉ thường trú:</label>
+                    <input type="text" id="editDiaChi" value="Đường Lê Lợi, TP. Huế">
+                    
+                    <label for="editGhiChu">Tiểu sử/Ghi chú:</label>
+                    <textarea id="editGhiChu" rows="4">Là người tạo lập và quản lý cây gia phả này.</textarea>
+                </form>
+            </div>
+
+            <div class="form-section account-settings" style="grid-column: span 2;">
+                <h2>Cài đặt Tài khoản & Liên hệ</h2>
+                <form class="flex gap-4">
+                    <div style="flex: 1;">
+                        <label for="editUsername">Tên đăng nhập:</label>
+                        <input type="text" id="editUsername" value="CaoDinhA" disabled>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="editEmail">Email liên hệ:</label>
+                        <input type="email" id="editEmail" value="caodinha@example.com">
+                    </div>
+                </form>
+                <div class="flex justify-end mt-4">
+                    <a href="#" class="btn-link mr-4 text-sm text-gray-500 hover:text-red-500">Yêu cầu xóa tài khoản</a>
+                    <button class="btn-secondary">Đổi mật khẩu</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-primary complete-button" type="submit">Hoàn thành & Lưu thay đổi</button>
+    </main>
+</body>
+</html>

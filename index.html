@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cây Gia Phả - Dòng Họ Cao Đình</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Gia phả họ Cao Đình</div>
+        <div class="search-bar">
+            <input type="text" placeholder="🔍 Tìm kiếm thành viên..." class="search-input" id="searchInput">
+            <button class="voice-search">🎤</button>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="add_member.html">Thêm Thành Viên</a>
+            <a href="profile_edit.html" class="profile-link">
+                <img src="https://placehold.co/35x35/0056b3/ffffff?text=A" alt="Avatar" class="profile-avatar">
+                Cao Đình A
+            </a>
+        </nav>
+    </header>
+
+    <main class="content-area tree-view">
+        <h1 class="text-center">Sơ đồ Cây Gia Phả</h1>
+
+        <div class="tree-diagram" id="treeDiagram">
+            <svg id="treeSvg" class="tree-svg" xmlns="http://www.w.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+
+            <div class="tree-canvas" id="treeCanvas"></div>
+        </div>
+        
+        <div class="member-details-box" id="memberDetailsBox">
+            <div class="detail-left">
+                <img src="" id="detailAvatar" alt="Ảnh đại diện" style="background-color: #eee;">
+                <h2 id="detailName"></h2>
+            </div>
+            <div class="detail-right">
+                <h2>Thông tin chi tiết</h2>
+                <div class="detail-info">
+                    <ul class="detail-list">
+                        <li><strong>Ngày sinh:</strong> <span id="detailDoB"></span></li>
+                        <li><strong>Giới tính:</strong> <span id="detailGender"></span></li>
+                        <li><strong>Địa chỉ thường trú:</strong> 123 Đường Lê Lợi, TP. Huế (Dữ liệu cố định)</li>
+                    </ul>
+                </div>
+                
+                <h3>Gia đình & Quan hệ</h3>
+                <ul class="detail-list">
+                    <li><strong>Cha/Mẹ:</strong> <span id="relParents">[Dữ liệu quan hệ]</span></li>
+                    <li><strong>Vợ/Chồng:</strong> <span id="relSpouse">[Dữ liệu quan hệ]</span></li>
+                    <li><strong>Con cái:</strong> <span id="relChildren">[Dữ liệu quan hệ]</span></li>
+                </ul>
+                
+                <h3>Tiểu sử / Sự kiện</h3>
+                <p id="detailBio">Tiểu sử thành viên sẽ được hiển thị ở đây.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="tree.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Người Mới</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Gia phả họ Cao Đình</div>
+        <div class="search-bar">
+            <input type="text" placeholder="🔍 Tìm kiếm thành viên..." class="search-input">
+            <button class="voice-search">🎤</button>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+            <a href="#" class="active">Thêm Thành Viên</a>
+            <a href="profile_edit.html" class="profile-link">
+                <img src="https://placehold.co/35x35/0056b3/ffffff?text=A" alt="Avatar" class="profile-avatar">
+                Cao Đình A
+            </a>
+        </nav>
+    </header>
+
+    <main class="content-area add-member-form">
+        <h1>Thêm Người Mới Vào Gia Phả</h1>
+
+        <div class="form-grid">
+            <div class="form-section">
+                <h2>1. Xác Định Mối Quan Hệ</h2>
+                <p class="text-gray-600 mb-4">Người mới được thêm vào cây sẽ là **Con** hoặc **Vợ/Chồng** của ai?</p>
+                <label for="nguoiLienQuan">Kết nối với thành viên hiện có:</label>
+                <input type="text" id="nguoiLienQuan" placeholder="Tìm và chọn thành viên..." required>
+
+                <label for="moiQuanHe">Mối quan hệ là:</label>
+                <select id="moiQuanHe" required>
+                    <option value="">-- Chọn mối quan hệ --</option>
+                    <option value="con">Con của [Người liên quan]</option>
+                    <option value="vo">Vợ của [Người liên quan]</option>
+                    <option value="chong">Chồng của [Người liên quan]</option>
+                </select>
+                
+                <h2 class="mt-8">2. Thông tin Cá Nhân</h2>
+                <form>
+                    <label for="hoTen">Họ và Tên (*):</label>
+                    <input type="text" id="hoTen" placeholder="Nhập họ và tên..." required>
+
+                    <label for="ngaySinh">Ngày sinh:</label>
+                    <input type="date" id="ngaySinh">
+
+                    <label for="gioiTinh">Giới tính:</label>
+                    <select id="gioiTinh">
+                        <option value="">-- Lựa chọn giới tính --</option>
+                        <option value="Nam">Nam</option>
+                        <option value="Nu">Nữ</option>
+                        <option value="Khac">Khác</option>
+                    </select>
+
+                    <label for="noiSinh">Nơi sinh:</label>
+                    <input type="text" id="noiSinh" placeholder="Nhập nơi sinh...">
+
+                    <label for="avatar">Ảnh đại diện:</label>
+                    <input type="file" id="avatar" accept="image/*">
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h2>3. Tạo Tài Khoản</h2>
+                <p class="text-gray-600 mb-4">Cung cấp quyền truy cập để thành viên tự cập nhật hồ sơ.</p>
+                
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" placeholder="Nhập tên đăng nhập...">
+
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu...">
+
+                <label for="email">Email liên hệ:</label>
+                <input type="email" id="email" placeholder="Nhập email...">
+
+                <button class="btn-primary mt-8 w-full" type="submit">Lưu & Thêm người mới</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

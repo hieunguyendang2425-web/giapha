@@ -1,0 +1,131 @@
+/* Màu sắc & Font */
+:root {
+    --primary-color: #2980b9;
+    --secondary-color: #f39c12;
+    --background-page: #fffbf5;
+    --text-dark: #333;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --font-family: 'Times New Roman', serif;
+    --node-border: #95a5a6;
+}
+
+/* --- Base --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-page);
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.logo { font-size: 24px; font-weight: bold; color: var(--primary-color); }
+.search-bar { display:flex; align-items:center; border:1px solid #ccc; border-radius:25px; overflow:hidden; background:#fff; width:350px; }
+.search-input { padding:8px 15px; border:none; outline:none; width:100%; }
+
+/* --- Content Layout --- */
+.content-area { padding: 40px; max-width: 1300px; margin: 0 auto; }
+h1 { color: var(--primary-color); text-align:center; margin-bottom:30px; }
+
+/* -------------------------------------
+ * KHU VỰC CÂY GIA PHẢ
+ * ------------------------------------- */
+
+.tree-diagram {
+    position: relative;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    background-color: var(--background-page);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.tree-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.tree-canvas {
+    position: relative;
+}
+
+/* Node (một người) */
+.person-node {
+    width: 140px;
+    height: 86px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 2px solid var(--node-border);
+    background: var(--card-bg);
+}
+
+.person-node:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.person-node img.person-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    flex-shrink: 0;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.person-name { font-weight: bold; font-size: 13px; color: #222; }
+.person-year { font-size: 12px; color: #666; margin-top: 4px; }
+
+.person-node.female { background: linear-gradient(180deg, #fff 0%, #fdebeb 100%); }
+.person-node.male { background: linear-gradient(180deg, #fff 0%, #eaf2f8 100%); }
+
+/* --- Hộp thông tin chi tiết --- */
+.member-details-box {
+    background-color: #ffffff;
+    border: 1px solid var(--primary-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    margin: 40px auto 0;
+    display: none;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.member-details-box.active {
+    display: flex;
+}
+
+.detail-left { text-align: center; flex-shrink: 0; width: 180px; }
+.detail-left img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid var(--primary-color); object-fit: cover; margin-bottom: 10px; }
+.detail-right { flex-grow: 1; padding-left: 20px; border-left: 1px solid #eee; }
+.detail-right h2 { color: var(--primary-color); margin-top: 0; padding-bottom: 5px; border-bottom: 1px solid #eee; }
+.detail-info { background-color: #f7f9fc; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+ul.detail-list { list-style: none; padding: 0; margin: 0; }
+ul.detail-list li { margin-bottom: 8px; }

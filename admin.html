@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Hệ Thống Gia Phả</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icon Admin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-user-shield"></i> ADMIN
+            </div>
+            <nav class="sidebar-nav">
+                <!-- UC3: Quản lý cây gia phả -->
+                <a href="#" class="current"><i class="fas fa-sitemap"></i> Quản lý gia phả</a>
+                <!-- UC2: Quản lý tài khoản -->
+                <a href="#"><i class="fas fa-users"></i> Quản lý tài khoản</a>
+                <!-- UC4: Sao lưu & phục hồi -->
+                <a href="#"><i class="fas fa-database"></i> Sao lưu và phục hồi dữ liệu</a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <h1>Quản lý Hệ Thống Gia Phả</h1>
+            
+            <!-- Thống kê nhanh (Dựa trên mẫu) -->
+            <div class="stats-cards">
+                <div class="card">Thành viên: 11</div>
+                <div class="card">Số thế hệ: 4</div>
+                <div class="card">Yêu cầu chờ duyệt: 0</div>
+            </div>
+
+            <!-- UC3 Admin: Xác minh thông tin -->
+            <div class="form-section">
+                <h2>Xác minh thông tin (Quan hệ/Tiểu sử)</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Người Yêu Cầu</th>
+                            <th>Thay Đổi (Liên quan)</th>
+                            <th>Ngày Gửi</th>
+                            <th>Trạng Thái</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cao Đình V</td>
+                            <td>Thêm con (Cao Thị J)</td>
+                            <td>16/5/2006</td>
+                            <td>Đã phê duyệt</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Cao Thị D</td>
+                            <td>Thêm vợ (Lê G)</td>
+                            <td>03/4/2005</td>
+                            <td>Chờ phê duyệt</td>
+                            <td>
+                                <button class="btn-approve">Duyệt</button>
+                                <button class="btn-reject">Từ chối</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- UC2 Admin: Quản lý Tài Khoản -->
+            <div class="form-section mt-8">
+                <h2>Quản lý Tài khoản Người Dùng</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Họ tên</th>
+                            <th>Tên đăng nhập</th>
+                            <th>Email</th>
+                            <th>Vai trò</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cao Đình V</td>
+                            <td>CaoDinhV</td>
+                            <td>hhh@gmail.com</td>
+                            <td>Admin</td>
+                            <td>Hoạt động</td>
+                            <td>
+                                <button class="btn-secondary">Sửa</button>
+                                <button class="btn-delete">Khóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cao Thị D</td>
+                            <td>CaoThiD</td>
+                            <td>gg@gmail.com</td>
+                            <td>Thành viên</td>
+                            <td>Hoạt động</td>
+                            <td>
+                                <button class="btn-secondary">Sửa</button>
+                                <button class="btn-delete">Khóa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- UC4 Admin: Sao lưu & Phục hồi -->
+            <div class="form-section mt-8">
+                <h2>Sao lưu & Phục hồi Dữ liệu</h2>
+                <div class="flex justify-between items-center mb-4 border-b pb-4">
+                    <p><strong>Lần sao lưu gần nhất:</strong> 04/10/2025 22:00</p>
+                    <button class="btn-primary">Sao lưu ngay</button>
+                </div>
+
+                <div class="alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>CẢNH BÁO:</strong> Hành động này sẽ **XÓA SẠCH** toàn bộ dữ liệu hiện tại và thay thế bằng dữ liệu từ file phục hồi. Dữ liệu không thể lấy lại được sau khi thực hiện.
+                </div>
+                <div class="flex justify-end mt-4">
+                    <input type="file" id="restoreFile" accept=".sql, .backup">
+                    <button class="btn-reject ml-4">Khôi phục dữ liệu</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
